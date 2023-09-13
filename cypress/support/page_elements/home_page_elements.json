@@ -1,0 +1,27 @@
+{
+    "HomePageElements":{
+        "top_header_left_text":".top_header_left > p",
+        "top_header_left_link":".top_header_left > p > a",
+        "user_icon":".fa-user",
+        "login_link":".right_list_fix > :nth-child(1) > a",
+        "lock_icon":".fa-lock",
+        "register_link":".right_list_fix > :nth-child(2) > a",
+        "logo":".header-logo > .logo > a > img",
+        "main_menu_one":".has-dropdown > .main-menu-link",
+        "main_menu_two":".has-megaitem",
+        "main_menu_three":".has-dropdown > .main-menu-link",
+        "heart_icon":":nth-child(1) > .offcanvas-toggle > .fa",
+        "shopping_bag_icon":".fa-shopping-bag",
+        "search_icon":".header-action-link > :nth-child(3) > .search_width",
+        "banner_slider":".slick-active > :nth-child(1) > .electronics_slider",
+        "banner_bottom_area":"#electronics_banner_bottom > .container",
+        "top_product_area":"#electronics_top_product",
+        "promotion_banner_area":"#promotion_banner",
+        "weekly_deal_area":"#elce_weekly_deal",
+        "center_heading":".center_heading > h2",
+        "central_subtitle":".center_heading > p",
+        "container_products":".container-fluid > :nth-child(2) > .col-lg-12",
+        "footer":"#footer_one",
+        "go_top_button":".go-top"
+    }
+}
