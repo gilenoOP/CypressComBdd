@@ -5,6 +5,11 @@ const { createEsbuildPlugin } = require ("@badeball/cypress-cucumber-preprocesso
 
 module.exports = defineConfig({
   projectId: "ibf92q",
+  reporterOptions: {
+    charts: true,
+    reportTitle: 'Projeto do curso de Cypress',
+    reportPageTitle: 'Projeto do curso de Cypress',
+  },
   e2e: {
     baseUrl: "https://automationpratice.com.br/",
     viewportWidth: 1920,
