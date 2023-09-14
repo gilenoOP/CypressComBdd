@@ -19,8 +19,8 @@ jobs:
       - name: Checkout/Clone do projeto
         uses: actions/checkout@v3
 
-      # Exemplo de execução no terminal
-      - name: Instalar dependencias do projeto
+      # Exemplos de execução no terminal
+      - name: Instalar node
         run: npm install
 
       # Execução e configuração do projeto
@@ -32,7 +32,7 @@ jobs:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
       
       # Upload do relatório do mocha
-      - name: upload relatório
+      - name: Upload relatório
         uses: actions/upload-artifact@v3
         with:
           name: Relatório
