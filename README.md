@@ -60,10 +60,11 @@ Os resultados dos testes serão automaticamente notificados no Slack após cada 
 
 ## Relatórios
 
-Os relatórios de testes são gerados utilizando o Mochawesome e podem ser encontrados em [cypress/reports/html](cypress/reports/html).
+Os relatórios de testes são gerados utilizando o Mochawesome e podem ser encontrados em cypress/reports/html.
 
 ## Apoio na instalação/configuração de plugins
 
 Caso necessário, acesse:
-https://github.com/LironEr/cypress-mochawesome-reporter#readme para ter um suporte na instalação e configuração do cypress-mochawesome-reporter
-https://github.com/badeball/cypress-cucumber-preprocessor#readme para ter um suporte na instalação e configuração do cypress-cucumber-preprocessor
+- https://github.com/LironEr/cypress-mochawesome-reporter#readme para ter um suporte na instalação e configuração do cypress-mochawesome-reporter
+
+- https://github.com/badeball/cypress-cucumber-preprocessor#readme para ter um suporte na instalação e configuração do cypress-cucumber-preprocessor
