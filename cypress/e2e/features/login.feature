@@ -43,6 +43,13 @@ Feature: Login
         When I click login
         Then system performs login
 
+    Scenario: Realizar login automaticamente
+        Given I am logged in with the Remember me checkbox checked
+        And I click logout
+        When I click login
+        Then system performs login
+
+
     Scenario: Realizar logout
         Given I am logged
         When I click logout
