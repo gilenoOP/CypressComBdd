@@ -50,8 +50,47 @@ Then ("system performs login", () =>{
 })
 
 
+Given ("I am logged in with the Remember me checkbox checked", () =>{
+    login_page.accessLogin()
+    login_page.clickRememberCheckBox()
+    login_page.fillCredentials("teste@teste.com", "123456")
+    login_page.realizeLogin()
+})
+
+When ("I log out successfully", () =>{
+    login_page.realizeLogout()
+})
+
+Then ("login details will be filled automatically", () =>{
+    login_page.validateLoginDetailsFilledAutomatically()
+})
+
+
+Given ("I logged out with the Remember me check box selected", () =>{
+    login_page.accessLogin()
+    login_page.clickRememberCheckBox()
+    login_page.fillCredentials("teste@teste.com", "123456")
+    login_page.realizeLogin()
+    login_page.clickLogout()
+    login_page.validateLogoutSuccess();
+})
+
+Given ("I close the browser", () =>{
+    login_page.fecharBrowser()
+})
+
+When("I access the application again", () =>{
+    cy.visit("/")
+})
+
+Then ("the application is accessed with the logged in account", () =>{
+    login_page.validateAutomaticLogin()
+})
+
+
 Given ("I am logged", () =>{
     login_page.accessLogin()
+    login_page.fillCredentials("teste@teste.com", "123456")
     login_page.realizeLogin()
 })
 

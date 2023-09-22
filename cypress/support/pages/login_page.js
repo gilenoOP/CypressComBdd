@@ -5,6 +5,7 @@ const loginPageEl = require("../page_elements/login_page_elements.json")
 import "cypress-real-events/support"
 
 let user = ""
+let userPassword = ""
 
 export default{
     validateLoginScreen(){
@@ -64,9 +65,9 @@ export default{
             .get(loginPageEl.LoginPageElements.login_button)
                 .should("be.visible")
                 .should("have.text", "login")
-            .get(loginPageEl.LoginPageElements.to_remember_checkbox)
+            .get(loginPageEl.LoginPageElements.remember_checkbox)
                 .should("be.visible")
-            .get(loginPageEl.LoginPageElements.to_remember_label)
+            .get(loginPageEl.LoginPageElements.remember_label)
                 .should("be.visible")
                 .should("have.text", "Lembrar de mim")
             .get(loginPageEl.LoginPageElements.create_account_link)
@@ -97,6 +98,7 @@ export default{
 
     fillCredentials(email, password){
         user = email
+        userPassword = password
         cy.get(loginPageEl.LoginPageElements.email_field)
             .type(email)
         cy.get(loginPageEl.LoginPageElements.password_field)
@@ -105,6 +107,11 @@ export default{
 
     clickLogin(){
         cy.get(loginPageEl.LoginPageElements.login_button)
+            .click()
+    },
+
+    clickRememberCheckBox(){
+        cy.get(loginPageEl.LoginPageElements.remember_checkbox)
             .click()
     },
 
@@ -137,24 +144,53 @@ export default{
             .should("contain", `${user}`)
     },
 
-    realizeLogin(){
+    validateLoginDetailsFilledAutomatically() {
         cy.get(loginPageEl.LoginPageElements.email_field)
-            .type("teste@teste.com")
+            .should("be.visible")
+            .should("have.text", `${user}`)
         cy.get(loginPageEl.LoginPageElements.password_field)
-            .type("123456")
+            .should("be.visible")
+            .should("have.text", `${userPassword}`)
+        cy.get(loginPageEl.LoginPageElements.remember_checkbox)
+            .should("be.checked")
+    },
+
+    validateAutomaticLogin(){
+        cy.get(loginPageEl.LoginPageElements.userLogged)
+            .should("be.visible")    
+            .should("contain", `${user}`)
+    },
+
+    realizeLogin(){
         cy.get(loginPageEl.LoginPageElements.login_button)
             .click()
         cy.get(loginPageEl.LoginPageElements.loginConfirmButton)
             .click()
     },
 
+    realizeLogout(){
+        cy.get(loginPageEl.LoginPageElements.userLogged)
+            .realHover()
+        cy.get(loginPageEl.LoginPageElements.logoutOption)
+            .should("be.visible")
+            .click()
+        cy.get(loginPageEl.LoginPageElements.logoutConfirmButton)
+            .click()
+    },
+
     validateLogoutSuccess(){
-        cy.url()
-            .should("contain", "/login")
         cy.get(loginPageEl.LoginPageElements.loginSuccessMsg)
             .should("be.visible")
             .should("have.text", "Logout realizado")
         cy.get(loginPageEl.LoginPageElements.logoutConfirmButton)
             .click()
+        cy.url()
+            .should("contain", "/login")
+    },
+
+    fecharBrowser(){
+        cy.window().then(win => win.close())
+        cy.wait(1000)
+        
     }
 }

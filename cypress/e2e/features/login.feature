@@ -43,12 +43,18 @@ Feature: Login
         When I click login
         Then system performs login
 
-    Scenario: Realizar login automaticamente
-        Given I am logged in with the Remember me checkbox checked
-        And I click logout
-        When I click login
-        Then system performs login
+#CENÁRIO DESATIVADO, POIS A APLICAÇÃO NÃO ESTÁ IMPLEMENTADA
+    #Scenario: Realizar login automaticamente mantendo o browser aberto
+        #Given I am logged in with the Remember me checkbox checked
+        #When I log out successfully
+        #Then login details will be filled automatically
 
+#CENÁRIO DESATIVADO, POIS A APLICAÇÃO NÃO ESTÁ IMPLEMENTADA
+    #Scenario: Realizar login automaticamente ao reabrir o browser
+        #Given I logged out with the Remember me check box selected
+        #And I close the browser
+        #When I access the application again
+        #Then the application is accessed with the logged in account
 
     Scenario: Realizar logout
         Given I am logged
