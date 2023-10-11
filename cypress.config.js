@@ -8,6 +8,7 @@ module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
     charts: true,
+    overwrite: false,
     reportTitle: 'Projeto do curso de Cypress',
     reportPageTitle: 'Projeto do curso de Cypress',
   },
@@ -30,4 +31,4 @@ module.exports = defineConfig({
       return config;
     },
   },
-});
+})
