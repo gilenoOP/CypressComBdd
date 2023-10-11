@@ -4,7 +4,7 @@ name: Run Basic Tests Schedule
 # Em que momento será executada
 on:
   schedule:
-    - cron: '35 22 * 9 1-5'
+    - cron: '35 22 12 10 1-5'
 
 jobs:
   # O que vai ser feito nessa pipeline
