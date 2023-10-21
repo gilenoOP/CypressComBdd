@@ -37,3 +37,10 @@ jobs:
         with:
           name: Relatório
           path: cypress/reports/html
+
+      # Upload de screenshots de falhas
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v3
+        with:
+          name: Screenshots
+          path: cypress/screenshots
