@@ -4,7 +4,7 @@ const { addCucumberPreprocessorPlugin } = require ("@badeball/cypress-cucumber-p
 const { createEsbuildPlugin } = require ("@badeball/cypress-cucumber-preprocessor/esbuild");
 
 module.exports = defineConfig({
-  projectId: "ibf92q",
+  projectId: "ibf92qGOP",
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
     charts: true,
