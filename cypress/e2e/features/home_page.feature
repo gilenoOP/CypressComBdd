@@ -4,5 +4,5 @@ Feature: Home page
     Para encontrar as informarções da página inicial da aplicação
 
     Scenario: Validar home page
-        WhenGOP I access the aplication url
+        When I access the aplication url
         Then the system displays the information from the home page
